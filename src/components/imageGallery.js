@@ -1,27 +1,25 @@
-  
+import React from 'react'
 import React, { useEffect, useState } from 'react';
-import './imageGallery.css';
-import images from './sampleData';
+import './App.css';
+import images from './data';
 import { SRLWrapper } from 'simple-react-lightbox';
-import img from './images/img1.jpeg';
-// import img2 from './images/img2.jpeg';
-// import img3 from './images/img3.jpeg';
-// import img4 from './images/img4.jpeg';
-// import img5 from './images/img5.jpeg';
-// import img6 from './images/img6.jpeg';
-// // import img7 from './images/img7.jpeg';
-// // import img8 from './images/img1.jpeg';
-// // import img9 from './images/img1.jpeg';
-// // import img10 from './images/img1.jpeg';
-// // import img11 from './images/img1.jpeg';
-// // import img12 from './images/img1.jpeg';
-const img1=img;
 
 const options = {
 	// settings: {
 	// 	overlayColor: 'rgb(25, 136, 124)',
 	// 	autoplaySpeed: 1500,
-
+	// 	transitionSpeed: 900
+	// },
+	// buttons: {
+	// 	backgroundColor: 'red',
+	// 	iconColor: 'rgba(126, 172, 139, 0.8)'
+	// },
+	// caption: {
+	// 	captionColor: '#a6cfa5',
+	// 	captionFontFamily: 'Raleway, sans-serif',
+	// 	captionFontWeight: '300',
+	// 	captionTextTransform: 'uppercase'
+	// },
 	// progressBar: {
 	// 	height: '20px',
 	// 	fillColor: 'blue',
@@ -44,16 +42,16 @@ function App() {
 		<div className="App">
 			<div className="tags">
 				<TagButton name="all" tagActive={tag === 'all' ? true : false} handleSetTag={setTag} /> /
-				<TagButton name="google maps" tagActive={tag === 'google maps' ? true : false} handleSetTag={setTag} /> /
-				<TagButton name="users" tagActive={tag === 'users' ? true : false} handleSetTag={setTag} /> /
-				<TagButton name="owner" tagActive={tag === 'owner' ? true : false} handleSetTag={setTag} />
+				<TagButton name="new" tagActive={tag === 'new' ? true : false} handleSetTag={setTag} /> /
+				<TagButton name="free" tagActive={tag === 'free' ? true : false} handleSetTag={setTag} /> /
+				<TagButton name="pro" tagActive={tag === 'pro' ? true : false} handleSetTag={setTag} />
 			</div>
 			<SRLWrapper options={options}>
 				<div className="container">
 					{filteredImages.map(image => (
 						<div key={image.id} className="image-card">
-							<a href={image.url}>
-								<img className="image" src={image.url} alt={image.imageName} />
+							<a href={`/images/${image.imageName}`}>
+								<img className="image" src={`/images/${image.imageName}`} alt="" />
 							</a>
 						</div>
 					))}
@@ -71,4 +69,10 @@ const TagButton = ({ name, handleSetTag, tagActive }) => {
 	);
 };
 
-export default App;
+export default function imageGallery() {
+    return (
+        <div>
+            
+        </div>
+    )
+}
