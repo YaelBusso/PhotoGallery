@@ -1,2 +1,3 @@
 ## Photo Gallery
-Cool Photo Gallery built in React.js.
+Cool Photo Gallery built in React.
+Checka
