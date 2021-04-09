@@ -16,4 +16,5 @@ const sampleData = [
   { id: "15", imageName: "img15", tag: "users", source: "somone2",  url: "https://source.unsplash.com/user/erondu/1600x900"},
   { id: "16", imageName: "img16", tag: "owner",  url: "https://source.unsplash.com/user/erondu/1600x900" },
 ];
+
 export default sampleData;
